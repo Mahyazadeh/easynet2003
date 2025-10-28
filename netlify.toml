@@ -1,0 +1,30 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Ignore build cache for secrets scanning
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[context.production]
+  command = "pnpm build"
+
+[context.deploy-preview]
+  command = "pnpm build"
+
+# Configure secrets scanning
+[build.processing]
+  skip_processing = false
+
+[build.processing.secrets]
+  # Exclude build artifacts from secrets scanning
+  excluded_patterns = [
+    ".next/**/*",
+    ".netlify/**/*",
+    "node_modules/**/*"
+  ]
+

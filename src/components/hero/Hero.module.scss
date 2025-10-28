@@ -1,0 +1,133 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+  overflow: hidden;
+}
+
+// New: Slide container
+.heroSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.6s ease-in-out,
+    visibility 0.6s ease-in-out;
+  z-index: 0;
+}
+
+// New: Active slide
+.heroSlideActive {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.heroMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.55) 60%);
+}
+
+.heroContent {
+  color: #fff;
+  margin-bottom: 5.5rem;
+}
+
+.heroTitle {
+  margin: 0 0 8px;
+  font-size: 3rem;
+  line-height: 1.05;
+  color: #fff;
+  font-weight: 800;
+}
+
+.heroSub {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  white-space: pre-line; // Preserves line breaks from textarea
+}
+
+.heroButton {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.heroNav {
+  position: absolute;
+  bottom: 2rem;
+  border: none;
+  background: transparent;
+  z-index: 10; // Increased z-index to be above slides
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.heroNavPrev {
+  left: 16px;
+}
+
+.heroNavNext {
+  right: 16px;
+}
+
+// .heroDots {
+//   position: absolute;
+//   bottom: 16px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   display: flex;
+//   gap: 8px;
+//   z-index: 10; // Increased z-index
+// }
+
+// .heroDot {
+//   width: 10px;
+//   height: 10px;
+//   border-radius: 50%;
+//   border: 2px solid rgba(255, 255, 255, 0.8);
+//   background: transparent;
+//   cursor: pointer;
+//   padding: 0;
+//   transition: all 0.2s ease;
+
+//   &:hover {
+//     border-color: #fff;
+//   }
+// }
+
+// .heroDotActive {
+//   background: #fff;
+//   border-color: #fff;
+// }
