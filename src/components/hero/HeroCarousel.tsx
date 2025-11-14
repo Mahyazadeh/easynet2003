@@ -60,7 +60,7 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
             )}
 
             <div className={styles.heroOverlay}>
-              <div className={styles.heroContent}>
+              <div className={`container ${styles.heroContent}`}>
                 <h1 className={styles.heroTitle}>{item.title}</h1>
 
                 {item.subtitle && <div className={styles.heroSub}>{item.subtitle}</div>}

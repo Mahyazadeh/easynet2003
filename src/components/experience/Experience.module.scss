@@ -20,6 +20,48 @@
   white-space: pre-line;
 }
 
+// Grid container (desktop)
+.gridContainer {
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.gridWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.gridCard {
+  flex: 0 0 auto;
+  transform: scale(0.7);
+  opacity: 0.5;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  .experienceCard {
+    margin: 0;
+    max-width: 250px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 10;
+
+    .experienceCard {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
 // Carousel container
 .carouselContainer {
   position: relative;
@@ -162,6 +204,10 @@
 
 // Responsive adjustments
 @media (max-width: 1200px) {
+  .gridWrapper {
+    gap: 0.75rem;
+  }
+
   .carouselContainer {
     :global {
       .slick-track {
@@ -197,6 +243,7 @@
     color: #fff;
     font-size: 1.15rem;
     text-align: center;
+    max-width: 800px;
   }
 
   .carouselContainer {
@@ -256,5 +303,29 @@
 
   .cardContent {
     padding: 0.7rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .sectionTitle {
+    text-align: left;
+  }
+  .titleOverlay {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+    p {
+      margin: 0;
+    }
+  }
+
+  .gridContainer {
+    padding: 0;
+  }
+
+  .experience {
+    padding-block-start: 3rem;
+    padding-block-end: 1rem;
   }
 }

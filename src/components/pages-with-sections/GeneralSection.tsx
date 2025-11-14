@@ -1,18 +1,18 @@
 import type { PageWithSection } from '@/payload-types'
 import Image from 'next/image'
 import { parseFormattedText } from '@/lib/textFormatting'
-import styles from './Azienda.module.scss'
+import styles from './General.module.scss'
 
-interface AziendaSectionProps {
-  azienda: PageWithSection
+interface GeneralSectionProps {
+  item: PageWithSection
 }
 
-export default function AziendaSection({ azienda }: AziendaSectionProps) {
+export default function GeneralSection({ item }: GeneralSectionProps) {
   return (
-    <section className={styles.azienda}>
-      {azienda.sections && azienda.sections.length > 0 && (
+    <section className={styles.item}>
+      {item.sections && item.sections.length > 0 && (
         <div className={styles.sectionsWrapper}>
-          {azienda.sections.map((section, index) => {
+          {item.sections.map((section, index) => {
             const media = typeof section.image === 'object' ? section.image : null
 
             return (
@@ -33,7 +33,7 @@ export default function AziendaSection({ azienda }: AziendaSectionProps) {
 
                   {/* Title overlaid on image */}
                   {section.sectionTitle && (
-                    <div className={styles.titleOverlay}>
+                    <div className={`container ${styles.titleOverlay}`}>
                       <h2 className={styles.sectionTitle}>
                         {parseFormattedText(section.sectionTitle)}
                       </h2>

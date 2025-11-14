@@ -12,7 +12,9 @@ export default function BestPracticeSection({ bestPractice }: BestPracticeSectio
     <section className={styles.bestPractice}>
       <div className="container">
         <div className="row mb-4">
-          <div className="col-12 d-flex justify-content-center flex-column align-items-center">
+          <div
+            className={`col-12 d-flex justify-content-center flex-column align-items-center ${styles.sectionTitleWrapper}`}
+          >
             <h2 className={styles.sectionTitle}>{bestPractice.title}</h2>
             {bestPractice.subtitle && (
               <p className={styles.sectionSubtitle}>{bestPractice.subtitle}</p>
@@ -31,7 +33,6 @@ export default function BestPracticeSection({ bestPractice }: BestPracticeSectio
                   <Link
                     href={card.link || '#'}
                     className={styles.card}
-                    target="_blank"
                     rel="noopener noreferrer"
                     style={{
                       backgroundImage: `url(${gradientPath})`,

@@ -98,3 +98,81 @@ svg {
 .background-image {
   background: #05183a url('/media/body.jpg') center/cover no-repeat;
 }
+
+strong {
+  font-weight: bold;
+}
+
+.easynet2003-page {
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-block-end: 3rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.3rem;
+      margin-inline-start: 2rem;
+
+      &:hover {
+        color: #81edfc;
+      }
+    }
+
+    .parita-genere-image {
+      margin-inline-start: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      a {
+        margin-inline-start: 1rem;
+        font-size: 1.1rem;
+        padding-block-end: 0.5rem;
+      }
+
+      .parita-genere-image {
+        margin-inline-start: 1rem;
+      }
+    }
+  }
+}
+
+.clienti-page,
+.partners-page {
+  .hover-shadow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+.simple-page-description {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  a {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+}
+
+.news-page {
+  min-height: 100vh;
+
+  .btn {
+    border-radius: 999px;
+    font-weight: 600;
+  }
+
+  .btn.disabled,
+  .btn:disabled,
+  .btn[disabled] {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+}

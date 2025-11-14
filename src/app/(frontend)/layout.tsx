@@ -2,6 +2,8 @@ import React from 'react'
 import { Raleway } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles.css'
+import Footer from '@/components/footer/Footer'
+import Sidebar from '@/components/sidebar/Sidebar'
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -21,7 +23,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" className={raleway.className}>
       <body>
-        <main>{children}</main>
+        <Sidebar />
+        <main>
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   )

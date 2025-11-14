@@ -15,6 +15,7 @@ import { HeroImage } from './collections/HeroImage'
 import { Experience } from './collections/Experience'
 import { BestPractice } from './collections/BestPractice'
 import { PageWithSections } from './collections/PageWithSections'
+import { SimplePage } from './collections/SimplePage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -26,7 +27,16 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, News, HeroImage, Experience, BestPractice, PageWithSections],
+  collections: [
+    Users,
+    Media,
+    News,
+    HeroImage,
+    Experience,
+    BestPractice,
+    PageWithSections,
+    SimplePage,
+  ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -36,6 +46,12 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
+    afterSchemaInit: [
+      ({ schema }) => {
+        Object.values(schema.tables).forEach((table) => table.enableRLS())
+        return schema
+      },
+    ],
   }),
   sharp,
   plugins: [

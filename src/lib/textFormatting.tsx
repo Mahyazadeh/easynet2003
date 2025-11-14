@@ -15,51 +15,63 @@ import React from 'react'
 export function parseFormattedText(text: string): React.ReactNode[] {
   if (!text) return []
 
-  // Convert literal \n strings to actual newline characters
-  // This handles cases where \n is stored as a string in the CMS
-  const normalizedText = text.replace(/\\n/g, '\n')
+  const hasFormatting = text.includes('\n') || text.includes('\\n') || text.includes('**')
+  if (!hasFormatting) {
+    return [text]
+  }
 
-  // First, split by bold markers
-  const parts = normalizedText.split(/(\*\*.*?\*\*)/)
+  const nodes: React.ReactNode[] = []
+  let buffer = ''
+  let bold = false
+  let keyCounter = 0
 
-  return parts.flatMap((part, partIndex) => {
-    // Handle bold text
-    if (part.startsWith('**') && part.endsWith('**')) {
-      const boldText = part.slice(2, -2)
+  const flushBuffer = () => {
+    if (!buffer) return
+    if (bold) {
+      nodes.push(<strong key={`strong-${keyCounter++}`}>{buffer}</strong>)
+    } else {
+      nodes.push(buffer)
+    }
+    buffer = ''
+  }
 
-      // Check if bold text contains line breaks
-      if (boldText.includes('\n')) {
-        const lines = boldText.split('\n')
-        return lines.flatMap((line, lineIndex) => {
-          const nodes: React.ReactNode[] = []
-          if (line) {
-            nodes.push(<strong key={`${partIndex}-bold-${lineIndex}`}>{line}</strong>)
-          }
-          if (lineIndex < lines.length - 1) {
-            nodes.push(<br key={`${partIndex}-br-${lineIndex}`} />)
-          }
-          return nodes
-        })
-      }
+  const pushBreak = () => {
+    nodes.push(<br key={`br-${keyCounter++}`} />)
+  }
 
-      return <strong key={`${partIndex}-bold`}>{boldText}</strong>
+  for (let i = 0; i < text.length; ) {
+    const char = text[i]
+    const nextChar = text[i + 1]
+
+    // Handle escaped newline sequences (\\n)
+    if (char === '\\' && nextChar === 'n') {
+      flushBuffer()
+      pushBreak()
+      i += 2
+      continue
     }
 
-    // Handle regular text with potential line breaks
-    if (part.includes('\n')) {
-      const lines = part.split('\n')
-      return lines.flatMap((line, lineIndex) => {
-        const nodes: React.ReactNode[] = []
-        if (line) {
-          nodes.push(line)
-        }
-        if (lineIndex < lines.length - 1) {
-          nodes.push(<br key={`${partIndex}-br-${lineIndex}`} />)
-        }
-        return nodes
-      })
+    // Handle actual newline characters
+    if (char === '\n') {
+      flushBuffer()
+      pushBreak()
+      i += 1
+      continue
     }
 
-    return part
-  })
+    // Handle bold markers (**)
+    if (char === '*' && nextChar === '*') {
+      flushBuffer()
+      bold = !bold
+      i += 2
+      continue
+    }
+
+    buffer += char
+    i += 1
+  }
+
+  flushBuffer()
+
+  return nodes
 }

@@ -74,6 +74,7 @@ export interface Config {
     experience: Experience;
     'best-practices': BestPractice;
     'page-with-sections': PageWithSection;
+    'simple-page': SimplePage;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -87,6 +88,7 @@ export interface Config {
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
     'best-practices': BestPracticesSelect<false> | BestPracticesSelect<true>;
     'page-with-sections': PageWithSectionsSelect<false> | PageWithSectionsSelect<true>;
+    'simple-page': SimplePageSelect<false> | SimplePageSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -265,6 +267,17 @@ export interface PageWithSection {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "simple-page".
+ */
+export interface SimplePage {
+  id: number;
+  title: string;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -297,6 +310,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'page-with-sections';
         value: number | PageWithSection;
+      } | null)
+    | ({
+        relationTo: 'simple-page';
+        value: number | SimplePage;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -462,6 +479,16 @@ export interface PageWithSectionsSelect<T extends boolean = true> {
         sectionContent?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "simple-page_select".
+ */
+export interface SimplePageSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

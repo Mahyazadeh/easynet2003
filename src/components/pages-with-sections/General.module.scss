@@ -30,11 +30,10 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transition: transform 0.5s ease;
 
   .imageWrapper:hover & {
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 }
 
@@ -59,7 +58,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem 4rem;
+  padding-block: 2rem;
   z-index: 2;
 }
 
@@ -74,7 +73,7 @@
 }
 
 .textContent {
-  padding: 3rem 2rem;
+  padding-block: 3rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -98,18 +97,18 @@
   white-space: pre-line;
 }
 
-// Responsive adjustments
 @media (max-width: 992px) {
   .imageWrapper {
     height: 350px;
   }
 
   .titleOverlay {
-    padding: 1.5rem 2rem;
+    padding-block: 1.5rem;
   }
 
   .sectionTitle {
     font-size: 3rem;
+    padding-inline: 1rem;
   }
 
   .textContent {
@@ -131,11 +130,12 @@
   }
 
   .titleOverlay {
-    padding: 1rem 1.5rem;
+    padding-block: 1rem;
   }
 
   .sectionTitle {
     font-size: 3rem;
+    padding-inline: 1rem;
   }
 
   .textContent {
@@ -149,5 +149,26 @@
 
   .sectionContent {
     font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .sectionTitle {
+    font-size: 3.5rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.7rem;
+  }
+
+  .sectionContent {
+    font-size: 1rem;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 4rem;
+    }
   }
 }

@@ -65,11 +65,14 @@
 
 .cardTitle {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
   margin: 0 0 1rem;
   line-height: 1.3;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  strong {
+    font-weight: 800;
+  }
 }
 
 .cardArrow {
@@ -114,5 +117,34 @@
 
   .cardArrow {
     font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .bestPractice {
+    background-color: #fff;
+    padding-block: 1rem 3rem;
+  }
+  .sectionTitleWrapper {
+    align-items: flex-start !important;
+  }
+  .sectionTitle {
+    text-align: left;
+    color: #002167;
+  }
+  .sectionSubtitle {
+    text-align: left;
+    color: #002167;
+    margin-inline: unset;
+  }
+  .card {
+    font-size: 1.25rem;
+    border-radius: unset;
+    height: 325px;
+
+    .cardTitle {
+      font-size: 1.15rem;
+      font-weight: 400;
+    }
   }
 }

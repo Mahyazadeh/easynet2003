@@ -9,15 +9,13 @@ interface NewsSectionProps {
 }
 
 export default function NewsSection({ newsItems }: NewsSectionProps) {
-  for (const item of newsItems) {
-    console.log(item)
-  }
-
   return (
     <section className={styles.news}>
       <div className="container">
         <div className="row mb-2">
-          <div className="col-12 d-flex justify-content-center flex-column align-items-center">
+          <div
+            className={`col-12 d-flex justify-content-center flex-column align-items-center ${styles.sectionTitleWrapper}`}
+          >
             <h2 className={styles.sectionTitle}>NEWS</h2>
             <p className={styles.sectionSub}>
               Resta aggiornato sulle ultime novità in ambito digitale

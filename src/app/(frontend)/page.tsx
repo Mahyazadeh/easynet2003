@@ -4,13 +4,11 @@ import { getPayload } from 'payload'
 import React from 'react'
 
 import config from '@/payload.config'
-import type { News as NewsType } from '@/payload-types'
 import './styles.css'
 import Hero from '@/components/hero/Hero'
 import NewsSection from '@/components/news/NewsSection'
 import ExperienceSection from '@/components/experience/ExperienceSection'
 import BestPracticeSection from '@/components/best_practice/BestPracticeSection'
-import Footer from '@/components/footer/Footer'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -21,7 +19,7 @@ export default async function HomePage() {
   const newsRes = await payload.find({
     collection: 'news',
     depth: 1,
-    limit: 10,
+    limit: 5,
     sort: '-date',
   })
   const newsItems = newsRes.docs
@@ -50,7 +48,6 @@ export default async function HomePage() {
         {bestPractice && <BestPracticeSection bestPractice={bestPractice} />}
         <NewsSection newsItems={newsItems} />
       </div>
-      <Footer />
     </div>
   )
 }
