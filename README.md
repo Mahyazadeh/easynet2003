@@ -376,6 +376,14 @@ Questa sezione elenca le funzionalità e le pagine ancora da sviluppare per comp
 ### 3. Deploy in Produzione
 
 **Obiettivo**: Configurare il deployment su Netlify per l'ambiente di produzione.
+ATTUALMENTE, il progetto presente su Netlify è generato a partire da una repository fuori dalla organization github easynet.
+
+Per il deploy in produzione ci sono due opzioni:
+
+1. Clonare il progetto dalla repository dell'organization github di easynet in un account privato, idealmente con email info@easynet2003.it.
+2. Sostenere i costi di pubblicazione di una repository privata appartenente all'organization github.
+
+Una volta scelta la soluzione più adatta, proseguire con la guida.
 
 **Passi da seguire**:
 
@@ -397,6 +405,7 @@ Questa sezione elenca le funzionalità e le pagine ancora da sviluppare per comp
      - `DATABASE_URI` (database di produzione)
      - `PAYLOAD_SECRET`
      - `S3_BUCKET`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_REGION`, `S3_ENDPOINT`
+       NB. le variabili di ambiente `S3_BUCKET` e `S3_REGION` DEVONO ESSERE PUBBLICHE.
      - Variabili per email (se implementata la pagina contatti)
    - Verificare che siano impostate per l'ambiente **Production**
 
