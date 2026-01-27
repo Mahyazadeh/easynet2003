@@ -14,7 +14,7 @@ export default async function Page() {
     collection: 'simple-page',
     where: {
       title: {
-        equals: 'Informativa per l’uso dei cookies sul sito EASYNET',
+        equals: 'Informativa per l’uso dei cookies sul sito EASY NET',
       },
     },
     depth: 1,

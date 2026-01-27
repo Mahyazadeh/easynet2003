@@ -7,8 +7,20 @@ interface GeneralSectionProps {
   item: PageWithSection
 }
 
+const getYouTubeEmbedUrl = (url?: string) => {
+  if (!url) return null
+
+  const match = url.match(
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/,
+  )
+
+  return match ? `https://www.youtube.com/embed/${match[1]}` : null
+}
+
+
 export default function GeneralSection({ item }: GeneralSectionProps) {
   return (
+    <>
     <section className={styles.item}>
       {item.sections && item.sections.length > 0 && (
         <div className={styles.sectionsWrapper}>
@@ -62,7 +74,20 @@ export default function GeneralSection({ item }: GeneralSectionProps) {
             )
           })}
         </div>
-      )}
+      )}  
+
     </section>
+      {item.videoUrl && (
+      <div className={styles.videoWrapper}>
+        <iframe
+          src={getYouTubeEmbedUrl(item.videoUrl)!}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+
+)}
+</>
   )
 }

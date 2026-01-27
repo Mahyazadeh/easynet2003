@@ -75,6 +75,7 @@ export interface Config {
     'best-practices': BestPractice;
     'page-with-sections': PageWithSection;
     'simple-page': SimplePage;
+    contact: Contact;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -89,6 +90,7 @@ export interface Config {
     'best-practices': BestPracticesSelect<false> | BestPracticesSelect<true>;
     'page-with-sections': PageWithSectionsSelect<false> | PageWithSectionsSelect<true>;
     'simple-page': SimplePageSelect<false> | SimplePageSelect<true>;
+    contact: ContactSelect<false> | ContactSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -219,6 +221,7 @@ export interface Experience {
     | {
         title: string;
         image: number | Media;
+        link: string;
         id?: string | null;
       }[]
     | null;
@@ -262,6 +265,14 @@ export interface PageWithSection {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Parte finale dell'URL (es. its-maria-gaetana-agnesi). Verrà generato automaticamente dal titolo se lasciato vuoto.
+   */
+  slug?: string | null;
+  /**
+   * Inserisci l'URL del video YouTube
+   */
+  videoUrl?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -273,6 +284,46 @@ export interface SimplePage {
   id: number;
   title: string;
   description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
+  id: number;
+  title: string;
+  subtitle: string;
+  description?: string | null;
+  sedeLegale: {
+    address: string;
+    phone1?: string | null;
+    phone2?: string | null;
+    email?: string | null;
+  };
+  sedeSecondaria?:
+    | {
+        address: string;
+        id?: string | null;
+      }[]
+    | null;
+  intro?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  image?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -314,6 +365,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'simple-page';
         value: number | SimplePage;
+      } | null)
+    | ({
+        relationTo: 'contact';
+        value: number | Contact;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -442,6 +497,7 @@ export interface ExperienceSelect<T extends boolean = true> {
     | {
         title?: T;
         image?: T;
+        link?: T;
         id?: T;
       };
   updatedAt?: T;
@@ -479,6 +535,8 @@ export interface PageWithSectionsSelect<T extends boolean = true> {
         sectionContent?: T;
         id?: T;
       };
+  slug?: T;
+  videoUrl?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -489,6 +547,33 @@ export interface PageWithSectionsSelect<T extends boolean = true> {
 export interface SimplePageSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact_select".
+ */
+export interface ContactSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  sedeLegale?:
+    | T
+    | {
+        address?: T;
+        phone1?: T;
+        phone2?: T;
+        email?: T;
+      };
+  sedeSecondaria?:
+    | T
+    | {
+        address?: T;
+        id?: T;
+      };
+  intro?: T;
+  image?: T;
   updatedAt?: T;
   createdAt?: T;
 }

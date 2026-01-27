@@ -31,6 +31,11 @@ export const Experience: CollectionConfig = {
           relationTo: 'media',
           required: true,
         },
+         {
+          name: 'link',
+          type: 'text',
+          required: true,
+        },       
       ],
     },
   ],

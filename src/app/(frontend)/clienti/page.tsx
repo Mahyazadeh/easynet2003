@@ -64,6 +64,11 @@ export default async function ClientiPage() {
       website: 'https://www.eng.it',
     },
     {
+      name: 'Foncoop',
+      logo: '/media/clienti/foncoop.png',
+      website: 'https://www.foncoop.coop',
+    },
+    {
       name: 'Iccrea',
       logo: '/media/clienti/iccrea.jpg',
       website: 'https://www.iccrea.it',
@@ -77,12 +82,7 @@ export default async function ClientiPage() {
       name: 'Lazio Crea',
       logo: '/media/clienti/lazio_crea.png',
       website: 'https://www.laziocrea.it',
-    },
-    {
-      name: 'Poste Italiane',
-      logo: '/media/clienti/poste_italiane.png',
-      website: 'https://www.poste.it',
-    },
+    }
   ]
 
   return (

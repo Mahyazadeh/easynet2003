@@ -27,7 +27,7 @@ export default function BestPracticeSection({ bestPractice }: BestPracticeSectio
             {bestPractice.cards.map((card, index) => {
               const gradientNumber = index + 1
               const gradientPath = `/media/gradient_${gradientNumber}.svg`
-
+              
               return (
                 <div key={index} className="col-12 col-md-6 col-lg-3">
                   <Link

@@ -51,9 +51,6 @@ export default function Sidebar() {
             <a href="/easynet2003">Azienda</a>
           </li>
           <li>
-            <a href="/cosa-facciamo">Cosa Facciamo</a>
-          </li>
-          <li>
             <a href="/clienti">Clienti</a>
           </li>
           <li>
@@ -63,7 +60,7 @@ export default function Sidebar() {
             <a href="/news">News</a>
           </li>
           <li>
-            <a href="/contacts">Contatti</a>
+            <a href="/contatti">Contatti</a>
           </li>
         </ul>
       </div>

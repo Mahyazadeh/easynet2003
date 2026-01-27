@@ -16,6 +16,7 @@ import { Experience } from './collections/Experience'
 import { BestPractice } from './collections/BestPractice'
 import { PageWithSections } from './collections/PageWithSections'
 import { SimplePage } from './collections/SimplePage'
+import { Contact } from './collections/Contact'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -36,6 +37,7 @@ export default buildConfig({
     BestPractice,
     PageWithSections,
     SimplePage,
+    Contact,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
