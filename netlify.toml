@@ -16,11 +16,6 @@
 [context.deploy-preview]
   command = "pnpm build"
 
-# Configure secrets scanning
-[build.processing]
-  skip_processing = false
 
-[build.processing.secrets]
- enabled = false
 
 
