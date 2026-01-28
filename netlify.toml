@@ -21,12 +21,6 @@
   skip_processing = false
 
 [build.processing.secrets]
-  # Exclude build artifacts from secrets scanning
-  excluded_patterns = [
-    ".next/**/*",
-    ".netlify/**/*",
-    "node_modules/**/*",
-    ".env",
-    ".env.*"
-  ]
+ enabled = false
+
 
