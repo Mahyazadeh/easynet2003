@@ -25,6 +25,8 @@
   excluded_patterns = [
     ".next/**/*",
     ".netlify/**/*",
-    "node_modules/**/*"
+    "node_modules/**/*",
+    ".env",
+    ".env.*"
   ]
 
