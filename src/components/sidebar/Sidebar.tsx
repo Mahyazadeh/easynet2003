@@ -2,6 +2,8 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './Sidebar.module.scss'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,6 +31,7 @@ export default function Sidebar() {
   }
 
   return (
+    <>
     <div className={styles.sidebarContainer} ref={sidebarRef}>
       <button
         className={`${styles.sidebarButton} ${isOpen ? styles.open : ''}`}
@@ -45,25 +48,29 @@ export default function Sidebar() {
       <div className={`${styles.sidebarMenu} ${isOpen ? styles.open : ''}`}>
         <ul className={styles.menuList}>
           <li>
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <a href="/easynet2003">Azienda</a>
+            <Link href="/easynet2003">Azienda</Link>
           </li>
           <li>
-            <a href="/clienti">Clienti</a>
+            <Link href="/clienti">Clienti</Link>
           </li>
           <li>
-            <a href="/partners">Partners</a>
+            <Link href="/partners">Partners</Link>
           </li>
           <li>
-            <a href="/news">News</a>
+            <Link href="/news">News</Link>
           </li>
           <li>
-            <a href="/contatti">Contatti</a>
+            <Link href="/contatti">Contatti</Link>
           </li>
         </ul>
       </div>
     </div>
+    <div className="logo-fixed">
+          <Image src="/media/logo.svg" width={90} height={90} alt="Easy Net logo" />
+      </div>
+    </>
   )
 }

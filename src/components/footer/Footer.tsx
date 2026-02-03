@@ -30,7 +30,7 @@ export default function Footer() {
 
           {/* Contacts Section */}
           <div className="col-12 col-lg-3 col-sm-6">
-            <div className="mb-3">
+            <div >
               <h6 className={`fw-bold mb-3 ${styles.heading}`}>Contatti</h6>
               <p className={`mb-1 ${styles.text}`}>
                 Email:{' '}
@@ -45,14 +45,14 @@ export default function Footer() {
                 </a>
               </p>
               <p className={`mb-2 ${styles.text}`}>Fax: +39 (06) 80669000</p>
-              <a
+              <Link
                 href="https://www.linkedin.com/company/easy-net-2003"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`text-white ${styles.socialIcon}`}
               >
-                <i className="fa fa-2x fa-linkedin-square"></i>
-              </a>
+                <i className="fa-brands fa-square-linkedin"></i>               
+              </Link>
             </div>
             <div>
               <ul className="list-unstyled">

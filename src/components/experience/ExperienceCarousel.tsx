@@ -1,11 +1,11 @@
 'use client'
-
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
 import Slider from 'react-slick'
 import type { Experience } from '@/payload-types'
 import styles from './Experience.module.scss'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import Link from 'next/link'
 
 interface ExperienceCarouselProps {
   sections: NonNullable<Experience['sections']>
@@ -53,7 +53,7 @@ export default function ExperienceCarousel({ sections }: ExperienceCarouselProps
           const media = typeof section.image === 'object' ? section.image : null
 
           return (
-            <div key={section.id || index} className={styles.slideWrapper}>
+            <Link key={section.id || index} className={styles.slideWrapper} href={section.link} rel="noopener noreferrer">
               <div
                 className={styles.experienceCard}
                 style={{
@@ -65,7 +65,7 @@ export default function ExperienceCarousel({ sections }: ExperienceCarouselProps
                   <h3 className={styles.cardTitle}>{section.title}</h3>
                 </div>
               </div>
-            </div>
+            </Link>
           )
         })}
       </Slider>

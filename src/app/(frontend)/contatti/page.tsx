@@ -99,7 +99,7 @@ export default async function Page() {
             )}
           </section>
           {/* Map – show only if address exists (or always if you prefer) */}
-          <iframe width="500" height="180" src="https://www.youtube.com/embed/Oqa1znR1xX8?si=F3Fv7K8vKvFZjTba" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          
           {contact.sedeLegale?.address && (
             <div style={{ width: '100%', height: '450px', flex: '1 1 50%' }} >
               <iframe

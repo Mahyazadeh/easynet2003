@@ -24,7 +24,7 @@ export default async function Page() {
 
   return (
     <div className="easynet2003-page background-image">
-      {pagina && <GeneralSection item={pagina} />}
+      {pagina && <GeneralSection item={pagina} isLogoRankpa/>}
     </div>
   )
 }

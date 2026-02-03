@@ -118,10 +118,12 @@ strong {
       &:hover {
         color: #81edfc;
       }
+  
     }
 
     .parita-genere-image {
       margin-inline-start: 2rem;
+      margin-block-start: 2rem;
     }
 
     @media (max-width: 768px) {
@@ -175,4 +177,11 @@ strong {
     pointer-events: none;
     opacity: 0.6;
   }
+}
+
+.logo-fixed {
+  position: absolute;    /* rimane fisso durante lo scroll */
+  top: 20px;          /* distanza dal bordo superiore */
+  left: 20px;         /* distanza dal bordo sinistro */
+  z-index: 1000;      /* sopra tutti gli altri elementi */
 }

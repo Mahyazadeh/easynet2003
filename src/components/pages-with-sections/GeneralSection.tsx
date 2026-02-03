@@ -4,7 +4,8 @@ import { parseFormattedText } from '@/lib/textFormatting'
 import styles from './General.module.scss'
 
 interface GeneralSectionProps {
-  item: PageWithSection
+  item: PageWithSection,
+  isLogoRankpa?: boolean ,
 }
 
 const getYouTubeEmbedUrl = (url?: string) => {
@@ -18,7 +19,7 @@ const getYouTubeEmbedUrl = (url?: string) => {
 }
 
 
-export default function GeneralSection({ item }: GeneralSectionProps) {
+export default function GeneralSection({ item, isLogoRankpa }: GeneralSectionProps) {
   return (
     <>
     <section className={styles.item}>
@@ -67,6 +68,7 @@ export default function GeneralSection({ item }: GeneralSectionProps) {
                           {parseFormattedText(section.sectionContent)}
                         </p>
                       )}
+                      {isLogoRankpa&& <Image src='/media/loghi-beneficiari-fondi-FESR.png' className='mt-5' width={600} height={200} alt='loghi'/>}                     
                     </div>
                   </div>
                 )}

@@ -17,7 +17,7 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length)
-    }, 25000)
+    }, 2500)
 
     return () => clearInterval(interval)
   }, [items.length])
