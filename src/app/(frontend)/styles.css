@@ -116,7 +116,7 @@ strong {
       margin-inline-start: 2rem;
 
       &:hover {
-        color: #81edfc;
+        text-decoration: underline;
       }
   
     }

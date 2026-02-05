@@ -45,9 +45,9 @@ export default async function PartnersPage() {
       website: 'https://www.itsagnesi.it/',
     },
     {
-      name: 'IW Group',
-      logo: '/media/partners/Iwgroup.png',
-      website: 'https://iwgroup.it/',
+      name: 'Itlogix',
+      logo: '/media/partners/itlogix.png',
+      website: 'https://www.itlogix.it/',
     },
     {
       name: 'Nexing',
@@ -61,7 +61,7 @@ export default async function PartnersPage() {
     },
     {
       name: 'Quadrante Impresa',
-      logo: '/media/partners/quadrante-impresa.jpg',
+      logo: '/media/partners/quadrante-impresa.png',
       website: 'http://www.quadrantedimpresa.it/',
     },
   ]

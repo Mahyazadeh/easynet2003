@@ -17,12 +17,12 @@ export default function Footer() {
           {/* Addresses Section */}
           <div className="col-12 col-lg-3 col-sm-6">
             <div className="mb-4">
-              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Sede Legale e operativa</h6>
+              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Sede legale e operativa</h6>
               <p className={`mb-0 ${styles.text}`}>via Guglielmo Calderini, 68</p>
               <p className={styles.text}>00196 Roma RM</p>
             </div>
             <div>
-              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Sedi territoriali</h6>
+              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Sedi secondarie</h6>
               <p className={`mb-1 ${styles.text}`}>via Paolo Da Cannobio, 2 20122 Milano</p>
               <p className={styles.text}>via A. Amato, 22 84131 Salerno</p>
             </div>
@@ -30,7 +30,7 @@ export default function Footer() {
 
           {/* Contacts Section */}
           <div className="col-12 col-lg-3 col-sm-6">
-            <div >
+            <div>
               <h6 className={`fw-bold mb-3 ${styles.heading}`}>Contatti</h6>
               <p className={`mb-1 ${styles.text}`}>
                 Email:{' '}
@@ -51,8 +51,14 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className={`text-white ${styles.socialIcon}`}
               >
-                <i className="fa-brands fa-square-linkedin"></i>               
+                <i className="fa-brands fa-square-linkedin"></i>
               </Link>
+            </div>
+          </div>
+
+          <div className="col-12 col-lg-2 col-sm-6">
+            <div>
+              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Link Utili</h6>
             </div>
             <div>
               <ul className="list-unstyled">
@@ -69,10 +75,8 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-
           {/* Certifications Section */}
-
-          <div className="col-12 col-lg-3 col-sm-6 d-flex justify-content-center">
+          <div className="col-12 col-lg-4 col-sm-6 d-flex">
             <div className="mb-3">
               <h6 className={`fw-bold mb-3 ${styles.heading}`}>Azienda Certificata</h6>
               <p className={`mb-4 ${styles.text}`}>UNI EN ISO 9001 2015</p>
@@ -80,16 +84,36 @@ export default function Footer() {
                 <Image
                   src="/media/cersa.png"
                   width={100}
-                  height={40}
+                  height={100}
                   alt="Cersa Certification"
                   className="mb-2"
                 />
               </div>
               <p className={`mb-0 ${styles.text}`}>CERTIFICATO N. 1407</p>
             </div>
+             {/* <div
+                className={`col-lg-4 col-sm-6 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
+              >
+                <Image
+                  src="/media/SMC-accredia-color.jpg"
+                  width={200}
+                  height={100}
+                  alt="Impresa Rosa"
+                />
+              </div> */}
+             <div
+                className={`col-lg-4 col-sm-6 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
+              >
+                <Image
+                  src="/media/logo_impresa_rosa.png"
+                  width={150}
+                  height={100}
+                  alt="Impresa Rosa"
+                />
+              </div>
           </div>
 
-          <div className="col-12 col-lg-3 col-sm-6 d-flex justify-content-center">
+          {/* <div className="col-12 col-lg-3 col-sm-6 d-flex justify-content-center">
             <div className="row">
               <div
                 className={`col-lg-4 col-sm-6 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
@@ -102,7 +126,7 @@ export default function Footer() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

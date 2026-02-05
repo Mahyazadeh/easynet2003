@@ -65,7 +65,7 @@ export default async function Page() {
               contact.sedeLegale?.phone2 ||
               contact.sedeLegale?.email) && (
               <>
-                <p className={styles.sectionSubtitle}>Sede Legale</p>
+                <p className={styles.sectionSubtitle}>Sede Legale e Operativa</p>
                 {contact.sedeLegale?.address && (
                   <div className={styles.sectionContent}>
                     {parseFormattedText(contact.sedeLegale.address)}

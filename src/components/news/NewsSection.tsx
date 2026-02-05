@@ -18,7 +18,7 @@ export default function NewsSection({ newsItems }: NewsSectionProps) {
           >
             <h2 className={styles.sectionTitle}>NEWS</h2>
             <p className={styles.sectionSub}>
-              Resta aggiornato sulle ultime novità in ambito digitale
+              Resta aggiornato sulle ultime novità dal mondo digitale
             </p>
           </div>
         </div>

@@ -30,7 +30,7 @@ export default async function ClientiPage() {
     },
     {
       name: 'Alterna',
-      logo: '/media/clienti/Alterna.png',
+      logo: '/media/clienti/alterna.png',
       website: 'https://www.alterna.it',
     },
     {
@@ -50,12 +50,12 @@ export default async function ClientiPage() {
     },
     {
       name: 'Comune di Latina',
-      logo: '/media/clienti/comune_latina.png',
+      logo: '/media/clienti/comune-latina.jpg',
       website: 'https://www.comune.latina.it',
     },
     {
-      name: 'Data Stampa',
-      logo: '/media/clienti/data_stampa.png',
+      name: 'Inoltre',
+      logo: '/media/clienti/inoltre.jpg',
       website: 'https://www.datastampa.it',
     },
     {
@@ -70,7 +70,7 @@ export default async function ClientiPage() {
     },
     {
       name: 'Iccrea',
-      logo: '/media/clienti/iccrea.jpg',
+      logo: '/media/clienti/iccrea-banca.png',
       website: 'https://www.iccrea.it',
     },
     {
@@ -80,7 +80,7 @@ export default async function ClientiPage() {
     },
     {
       name: 'Lazio Crea',
-      logo: '/media/clienti/lazio_crea.png',
+      logo: '/media/clienti/laziocrea.png',
       website: 'https://www.laziocrea.it',
     }
   ]
