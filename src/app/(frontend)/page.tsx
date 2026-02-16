@@ -1,14 +1,12 @@
 import { headers as getHeaders } from 'next/headers.js'
-import Link from 'next/link'
 import { getPayload } from 'payload'
-import React from 'react'
 
-import config from '@/payload.config'
-import './styles.css'
+import BestPracticeSection from '@/components/best_practice/BestPracticeSection'
+import ExperienceSection from '@/components/experience/ExperienceSection'
 import Hero from '@/components/hero/Hero'
 import NewsSection from '@/components/news/NewsSection'
-import ExperienceSection from '@/components/experience/ExperienceSection'
-import BestPracticeSection from '@/components/best_practice/BestPracticeSection'
+import config from '@/payload.config'
+import './styles.css'
 
 export default async function HomePage() {
   const headers = await getHeaders()

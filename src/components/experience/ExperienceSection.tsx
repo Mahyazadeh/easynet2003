@@ -6,9 +6,21 @@ import { useIsMobile } from '@/hooks/useMediaQuery'
 import ExperienceCarousel from './ExperienceCarousel'
 import ExperienceGrid from './ExperienceGrid'
 import styles from './Experience.module.scss'
+import type { Metadata } from 'next'
+
 
 interface ExperienceSectionProps {
   experience: Experience
+}
+
+
+export async function generateMetadata({
+  experience,
+}: ExperienceSectionProps): Promise<Metadata> {
+  return {
+    title: experience.title || 'EasyNet2003', 
+    description: experience.subtitle || 'EasyNet2003',
+  }
 }
 
 export default function ExperienceSection({ experience }: ExperienceSectionProps) {

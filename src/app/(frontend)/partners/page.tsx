@@ -57,7 +57,7 @@ export default async function PartnersPage() {
     {
       name: 'Numaweb',
       logo: '/media/partners/numaweb.png',
-      website: 'https://www.numaweb.com',
+      website: 'https://www.numaweb.it/',
     },
     {
       name: 'Quadrante Impresa',

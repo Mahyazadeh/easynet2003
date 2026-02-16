@@ -69,7 +69,7 @@ export default function Sidebar() {
       </div>
     </div>
     <div className="logo-fixed">
-          <Image src="/media/logo.png" width={90} height={90} alt="Easy Net logo" />
+          <Image src="/media/Logo_EasyNet_2026.svg" width={90} height={90} alt="Easy Net logo" />
       </div>
     </>
   )

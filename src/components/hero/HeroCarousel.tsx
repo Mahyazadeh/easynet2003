@@ -103,7 +103,7 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
             />
           </button>
 
-          <div className={styles.heroDots}>
+          {/* <div className={styles.heroDots}>
             {items.map((_, index) => (
               <button
                 key={index}
@@ -112,7 +112,7 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </div>
+          </div> */}
         </>
       )}
     </section>

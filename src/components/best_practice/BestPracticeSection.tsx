@@ -2,11 +2,20 @@ import type { BestPractice } from '@/payload-types'
 import Link from 'next/link'
 import { parseFormattedText } from '@/lib/textFormatting'
 import styles from './BestPractice.module.scss'
+import type { Metadata } from 'next'
 
 interface BestPracticeSectionProps {
   bestPractice: BestPractice
 }
 
+export async function generateMetadata({
+  bestPractice,
+}: BestPracticeSectionProps): Promise<Metadata> {
+  return {
+    title: bestPractice.title || 'EasyNet2003', 
+    description: bestPractice.subtitle || 'EasyNet2003',
+  }
+}
 export default function BestPracticeSection({ bestPractice }: BestPracticeSectionProps) {
   return (
     <section className={styles.bestPractice}>

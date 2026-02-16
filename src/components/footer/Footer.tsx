@@ -91,42 +91,18 @@ export default function Footer() {
               </div>
               <p className={`mb-0 ${styles.text}`}>CERTIFICATO N. 1407</p>
             </div>
-             {/* <div
-                className={`col-lg-4 col-sm-6 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
-              >
-                <Image
-                  src="/media/SMC-accredia-color.jpg"
-                  width={200}
-                  height={100}
-                  alt="Impresa Rosa"
-                />
-              </div> */}
-             <div
-                className={`col-lg-4 col-sm-6 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
-              >
+            <Link href="/parita-di-genere"
+              className={`col-lg-4 col-sm-6 mt-3 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
+            >
                 <Image
                   src="/media/logo_impresa_rosa.png"
                   width={150}
                   height={100}
                   alt="Impresa Rosa"
                 />
-              </div>
+            </Link>
           </div>
 
-          {/* <div className="col-12 col-lg-3 col-sm-6 d-flex justify-content-center">
-            <div className="row">
-              <div
-                className={`col-lg-4 col-sm-6 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
-              >
-                <Image
-                  src="/media/logo_impresa_rosa.png"
-                  width={150}
-                  height={100}
-                  alt="Impresa Rosa"
-                />
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </footer>

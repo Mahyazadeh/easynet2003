@@ -27,6 +27,15 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta : {
+      icons: [
+        { 
+          rel: 'icon',
+          type: 'image/png',
+          url: '/favicon.png',
+        },
+      ]
+    }
   },
   collections: [
     Users,

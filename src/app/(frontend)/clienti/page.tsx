@@ -31,7 +31,7 @@ export default async function ClientiPage() {
     {
       name: 'Alterna',
       logo: '/media/clienti/alterna.png',
-      website: 'https://www.alterna.it',
+      website: 'https://alternanet.it/',
     },
     {
       name: 'Arthur D. Little',
@@ -56,7 +56,7 @@ export default async function ClientiPage() {
     {
       name: 'Inoltre',
       logo: '/media/clienti/inoltre.jpg',
-      website: 'https://www.datastampa.it',
+      website: 'https://www.inoltrenews.it/',
     },
     {
       name: 'Engineering',
@@ -71,7 +71,7 @@ export default async function ClientiPage() {
     {
       name: 'Iccrea',
       logo: '/media/clienti/iccrea-banca.png',
-      website: 'https://www.iccrea.it',
+      website: 'https://www.iccreabanca.it/it-IT/Pagine/default.aspx',
     },
     {
       name: 'ISED',
