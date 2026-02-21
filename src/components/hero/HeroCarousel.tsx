@@ -9,18 +9,33 @@ interface HeroCarouselProps {
   items: HeroImage[]
 }
 
+const durations = [2500, 5000, 5000]
+
 export default function HeroCarousel({ items }: HeroCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    if (items.length <= 1) return
+  if (items.length <= 1) return
 
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % items.length)
-    }, 2500)
+  let intervalId: NodeJS.Timeout
 
-    return () => clearInterval(interval)
-  }, [items.length])
+  const startInterval = () => {
+    const duration = durations[currentIndex] ?? 2500
+    intervalId = setInterval(() => {
+      setCurrentIndex((prev) => {
+        const next = (prev + 1) % items.length
+        // We clear & restart interval with new duration
+        clearInterval(intervalId)
+        startInterval()
+        return next
+      })
+    }, duration)
+  }
+
+  startInterval()
+
+  return () => clearInterval(intervalId)
+}, [currentIndex, items.length])
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
@@ -103,16 +118,6 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
             />
           </button>
 
-          {/* <div className={styles.heroDots}>
-            {items.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`${styles.heroDot} ${index === currentIndex ? styles.heroDotActive : ''}`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div> */}
         </>
       )}
     </section>

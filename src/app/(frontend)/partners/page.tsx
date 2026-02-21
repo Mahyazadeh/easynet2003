@@ -39,16 +39,16 @@ export default async function PartnersPage() {
       logo: '/media/partners/HandSigns.png',
       website: 'https://www.handysigns.it/',
     },
-    {
-      name: 'ITS',
-      logo: '/media/partners/its.png',
-      website: 'https://www.itsagnesi.it/',
-    },
-    {
+     {
       name: 'Itlogix',
       logo: '/media/partners/itlogix.png',
       website: 'https://www.itlogix.it/',
     },
+    {
+      name: 'ITS',
+      logo: '/media/partners/its.png',
+      website: 'https://www.itsagnesi.it/',
+    },   
     {
       name: 'Nexing',
       logo: '/media/partners/NEXING.png',

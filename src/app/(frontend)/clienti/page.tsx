@@ -44,21 +44,11 @@ export default async function ClientiPage() {
       website: 'https://www.bccgambatesa.it',
     },
     {
-      name: 'BCC Sistemi Informatici',
-      logo: '/media/clienti/bcc-sistemi-informatici.svg',
-      website: 'https://www.bccsi.it',
-    },
-    {
       name: 'Comune di Latina',
       logo: '/media/clienti/comune-latina.jpg',
       website: 'https://www.comune.latina.it',
     },
-    {
-      name: 'Inoltre',
-      logo: '/media/clienti/inoltre.jpg',
-      website: 'https://www.inoltrenews.it/',
-    },
-    {
+       {
       name: 'Engineering',
       logo: '/media/clienti/engineering.png',
       website: 'https://www.eng.it',
@@ -68,11 +58,16 @@ export default async function ClientiPage() {
       logo: '/media/clienti/foncoop.png',
       website: 'https://www.foncoop.coop',
     },
-    {
+     {
       name: 'Iccrea',
       logo: '/media/clienti/iccrea-banca.png',
       website: 'https://www.iccreabanca.it/it-IT/Pagine/default.aspx',
     },
+    {
+      name: 'Inoltre',
+      logo: '/media/clienti/inoltre.jpg',
+      website: 'https://www.inoltrenews.it/',
+    },  
     {
       name: 'ISED',
       logo: '/media/clienti/ised.png',
@@ -82,6 +77,11 @@ export default async function ClientiPage() {
       name: 'Lazio Crea',
       logo: '/media/clienti/laziocrea.png',
       website: 'https://www.laziocrea.it',
+    },
+     {
+      name: 'OverNet Education',
+      logo: '/media/clienti/OverNet.png',
+      website: 'https://overnet.education/',
     }
   ]
 

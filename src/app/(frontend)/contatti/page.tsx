@@ -65,7 +65,7 @@ export default async function Page() {
               contact.sedeLegale?.phone2 ||
               contact.sedeLegale?.email) && (
               <>
-                <p className={styles.sectionSubtitle}>Sede Legale e Operativa</p>
+                <p className={styles.sectionSubtitle}>Sede legale e operativa</p>
                 {contact.sedeLegale?.address && (
                   <div className={styles.sectionContent}>
                     {parseFormattedText(contact.sedeLegale.address)}
@@ -91,7 +91,7 @@ export default async function Page() {
 
             {contact.sedeSecondaria && contact.sedeSecondaria?.length > 0 && (
               <section className="mt-4">
-                <p className={styles.sectionSubtitle}>Sedi Secondarie</p>
+                <p className={styles.sectionSubtitle}>Sedi secondarie</p>
                 {contact.sedeSecondaria.map((sede, i) => (
                   <div key={i}>{sede.address && <div>{parseFormattedText(sede.address)}</div>}</div>
                 ))}

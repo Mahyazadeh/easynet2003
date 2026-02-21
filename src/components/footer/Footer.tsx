@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
             <div>
               <h6 className={`fw-bold mb-3 ${styles.heading}`}>Sedi secondarie</h6>
-              <p className={`mb-1 ${styles.text}`}>via Paolo Da Cannobio, 2 20122 Milano</p>
+              <p className={`mb-1 ${styles.text}`}>via Paolo da Cannobio, 2 20122 Milano</p>
               <p className={styles.text}>via A. Amato, 22 84131 Salerno</p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           <div className="col-12 col-lg-2 col-sm-6">
             <div>
-              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Link Utili</h6>
+              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Link utili</h6>
             </div>
             <div>
               <ul className="list-unstyled">
@@ -78,9 +78,9 @@ export default function Footer() {
           {/* Certifications Section */}
           <div className="col-12 col-lg-4 col-sm-6 d-flex">
             <div className="mb-3">
-              <h6 className={`fw-bold mb-3 ${styles.heading}`}>Azienda Certificata</h6>
-              <p className={`mb-4 ${styles.text}`}>UNI EN ISO 9001 2015</p>
-              <div className={`d-flex justify-content-center mb-3 ${styles.imageWrapper}`}>
+              <h6 className={`fw-bold mb-3 ${[styles.heading]}`} style={{textAlign:'center'}}>Azienda certificata</h6>
+              <p className={`${styles.text}`} style={{textAlign:'center'}}>UNI EN ISO 9001 2015</p>
+              <div className={`d-flex justify-content-center ${styles.imageWrapper}`}>
                 <Image
                   src="/media/cersa.png"
                   width={100}
@@ -88,11 +88,8 @@ export default function Footer() {
                   alt="Cersa Certification"
                   className="mb-2"
                 />
-              </div>
-              <p className={`mb-0 ${styles.text}`}>CERTIFICATO N. 1407</p>
-            </div>
-            <Link href="/parita-di-genere"
-              className={`col-lg-4 col-sm-6 mt-3 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
+                <Link href="/parita-di-genere"
+              className={`col-lg-4 col-sm-6  d-flex  align-items-center ${styles.impresaRosaImage}`}
             >
                 <Image
                   src="/media/logo_impresa_rosa.png"
@@ -101,6 +98,19 @@ export default function Footer() {
                   alt="Impresa Rosa"
                 />
             </Link>
+              </div>
+              <p className={`mb-0 ${styles.text}`} style={{textAlign:'center'}}>CERTIFICATO N. 1407</p>
+            </div>
+            {/* <Link href="/parita-di-genere"
+              className={`col-lg-4 col-sm-6 mt-3 d-flex justify-content-center align-items-center ${styles.impresaRosaImage}`}
+            >
+                <Image
+                  src="/media/logo_impresa_rosa.png"
+                  width={150}
+                  height={100}
+                  alt="Impresa Rosa"
+                />
+            </Link> */}
           </div>
 
         </div>

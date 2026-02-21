@@ -17,6 +17,9 @@ const raleway = Raleway({
 export const metadata = {
   description: 'Il sito ufficiale di EasyNet2003',
   title: 'EasyNet2003',
+  icons: {
+    icon: '/favicon.png',
+  }
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
