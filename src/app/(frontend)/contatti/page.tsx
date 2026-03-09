@@ -1,8 +1,11 @@
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../../../components/pages-with-sections/General.module.scss'
 import { parseFormattedText } from '@/lib/textFormatting'
+
+export const revalidate = 3600;
 
 export default async function Page() {
   const payload = await getPayload({ config })
@@ -82,9 +85,9 @@ export default async function Page() {
                   </div>
                 )}
                 {contact.sedeLegale?.email && (
-                  <div className={styles.sectionContent}>
+                  <Link href={`mailto:${contact.sedeLegale.email}`} className={styles.sectionContent} >
                     {parseFormattedText(contact.sedeLegale.email)}
-                  </div>
+                  </Link>
                 )}
               </>
             )}
