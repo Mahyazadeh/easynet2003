@@ -4,22 +4,43 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../../components/pages-with-sections/General.module.scss'
 import { parseFormattedText } from '@/lib/textFormatting'
+import { cache } from 'react'
+import { COMPANY_NAME } from '../page'
 
 export const revalidate = 3600;
 
-export default async function Page() {
+const getPagina = cache(async () => {
+  try {
   const payload = await getPayload({ config })
-  const result = await payload.find({
+  const res = await payload.find({
     collection: 'contact',
     depth: 1,
     limit: 1,
     overrideAccess: true,
   })
+    return res.docs[0]
+  } catch (err) {
+    console.error('SERVER ERRORE in getPagina:', err)
+    return null
+  }
+})
 
-  const contact = result.docs[0]
+export async function generateMetadata() {
+  const pagina = await getPagina()
+  const baseTitle = pagina?.seo?.metaTitle || pagina?.title
+
+  return {
+    title: `${baseTitle} | ${COMPANY_NAME}`,
+    description: pagina?.seo?.metaDescription || '',
+  }
+}
+
+export default async function Page() {
+  const contact = await getPagina()
   if (!contact) {
     return <div>Nessun contenuto contatti trovato</div>
   }
+  console.log('PAGINA', contact.seo)
 
   const media =
     contact.image &&

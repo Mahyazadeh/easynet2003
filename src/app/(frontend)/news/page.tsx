@@ -1,4 +1,3 @@
-import { headers as getHeaders } from 'next/headers.js'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPayload } from 'payload'
@@ -7,6 +6,8 @@ import React from 'react'
 import config from '@/payload.config'
 import NewsCard from '@/components/news/NewsCard'
 import GeneralSection from '@/components/pages-with-sections/GeneralSection'
+import { cache } from 'react'
+import { COMPANY_NAME } from '../page'
 
 const ITEMS_PER_PAGE = 10
 
@@ -16,8 +17,39 @@ interface NewsPageProps {
   }>
 }
 
+const getPagina = cache(async () => {
+  try {
+    const payloadConfig = await config    
+    const payload = await getPayload({ config: payloadConfig })
+    
+    const res = await payload.find({
+    collection: 'page-with-sections',
+    where: {
+      title: {
+        equals: 'News',
+      },
+    },
+    depth: 1,
+    limit: 1,
+  })    
+    return res.docs[0]
+  } catch (err) {
+    console.error('SERVER ERRORE in getPagina:', err)
+    return null
+  }
+})
+
+export async function generateMetadata() {
+  const pagina = await getPagina()
+  const baseTitle = pagina?.seo?.metaTitle || pagina?.title
+
+  return {
+    title: `${baseTitle} | ${COMPANY_NAME}`,
+    description: pagina?.seo?.metaDescription || '',
+  }
+}
+
 export default async function NewsPage({ searchParams }: NewsPageProps) {
-  const headers = await getHeaders()
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
 

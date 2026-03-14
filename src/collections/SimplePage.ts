@@ -17,6 +17,34 @@ export const SimplePage: CollectionConfig = {
       type: 'textarea',
       required: false,
       label: 'Description',
+    },   {
+  name: 'seo',
+  type: 'group',
+  label: 'SEO Metadata',
+  admin: {
+    position: 'sidebar',
+  },
+  fields: [
+    {
+      name: 'metaTitle',
+      type: 'text',
+      label: 'Meta Title',
+      required: false,
+      admin: {
+        description: 'Titolo usato per SEO',
+      },
     },
+    {
+      name: 'metaDescription',
+      type: 'textarea',
+      label: 'Meta Description',
+      required: false,
+      admin: {
+        description: 'Descrizione SEO ',
+      },
+      maxLength: 160,
+    },
+  ],
+}
   ],
 }

@@ -273,6 +273,16 @@ export interface PageWithSection {
    * Inserisci l'URL del video YouTube
    */
   videoUrl?: string | null;
+  seo?: {
+    /**
+     * Titolo usato per SEO
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrizione SEO
+     */
+    metaDescription?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -284,6 +294,16 @@ export interface SimplePage {
   id: number;
   title: string;
   description?: string | null;
+  seo?: {
+    /**
+     * Titolo usato per SEO
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrizione SEO
+     */
+    metaDescription?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -324,6 +344,16 @@ export interface Contact {
     [k: string]: unknown;
   } | null;
   image?: (number | null) | Media;
+  seo?: {
+    /**
+     * Titolo usato per SEO
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrizione SEO
+     */
+    metaDescription?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -537,6 +567,12 @@ export interface PageWithSectionsSelect<T extends boolean = true> {
       };
   slug?: T;
   videoUrl?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -547,6 +583,12 @@ export interface PageWithSectionsSelect<T extends boolean = true> {
 export interface SimplePageSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -574,6 +616,12 @@ export interface ContactSelect<T extends boolean = true> {
       };
   intro?: T;
   image?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

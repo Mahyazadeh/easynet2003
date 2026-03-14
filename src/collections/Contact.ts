@@ -1,6 +1,6 @@
-import type { CollectionConfig  } from 'payload'
+import type { CollectionConfig } from 'payload'
 
-export const Contact: CollectionConfig  = {
+export const Contact: CollectionConfig = {
   slug: 'contact',
   admin: {
     useAsTitle: 'title',
@@ -18,7 +18,7 @@ export const Contact: CollectionConfig  = {
       required: true,
       defaultValue: 'Contattaci',
     },
-     {
+    {
       name: 'description',
       type: 'text',
     },
@@ -48,7 +48,7 @@ export const Contact: CollectionConfig  = {
           name: 'email',
           type: 'email',
           defaultValue: 'info@easynet2003.it',
-        },      
+        },
       ],
     },
 
@@ -65,18 +65,46 @@ export const Contact: CollectionConfig  = {
         },
       ],
     },
-
     {
       name: 'intro',
       type: 'richText',
       label: 'Testo introduttivo',
     },
     {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      label: 'Section Image',
+    },
+    {
+      name: 'seo',
+      type: 'group',
+      label: 'SEO Metadata',
+      admin: {
+        position: 'sidebar',
+      },
+      fields: [
+        {
+          name: 'metaTitle',
+          type: 'text',
+          label: 'Meta Title',
           required: false,
-          label: 'Section Image',
+          admin: {
+            description: 'Titolo usato per SEO',
+          },
         },
+        {
+          name: 'metaDescription',
+          type: 'textarea',
+          label: 'Meta Description',
+          required: false,
+          admin: {
+            description: 'Descrizione SEO ',
+          },
+          maxLength: 160,
+        },
+      ],
+    },
   ],
 }

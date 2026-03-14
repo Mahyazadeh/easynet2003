@@ -8,6 +8,8 @@ import NewsSection from '@/components/news/NewsSection'
 import config from '@/payload.config'
 import './styles.css'
 
+ export const COMPANY_NAME = 'EasyNet2003'
+
 export default async function HomePage() {
   const headers = await getHeaders()
   const payloadConfig = await config

@@ -1,17 +1,19 @@
 import Image from 'next/image'
-import { headers as getHeaders } from 'next/headers.js'
 import { getPayload } from 'payload'
 import React from 'react'
 
 import config from '@/payload.config'
 import GeneralSection from '@/components/pages-with-sections/GeneralSection'
+import { cache } from 'react'
+import { COMPANY_NAME } from '../page'
 
-export default async function PartnersPage() {
-  const headers = await getHeaders()
-  const payloadConfig = await config
-  const payload = await getPayload({ config: payloadConfig })
 
-  const paginaRes = await payload.find({
+const getPagina = cache(async () => {
+  try {
+    const payloadConfig = await config    
+    const payload = await getPayload({ config: payloadConfig })
+    
+    const res = await payload.find({
     collection: 'page-with-sections',
     where: {
       title: {
@@ -20,10 +22,25 @@ export default async function PartnersPage() {
     },
     depth: 1,
     limit: 1,
-  })
-  const pagina = paginaRes.docs[0]
+  })    
+    return res.docs[0]
+  } catch (err) {
+    console.error('SERVER ERRORE in getPagina:', err)
+    return null
+  }
+})
 
-  const partners = [
+export async function generateMetadata() {
+  const pagina = await getPagina()
+  const baseTitle = pagina?.seo?.metaTitle || pagina?.title
+
+  return {
+    title: `${baseTitle} | ${COMPANY_NAME}`,
+    description: pagina?.seo?.metaDescription || '',
+  }
+}
+
+ const partners = [
     {
       name: 'Dataweb',
       logo: '/media/partners/dataweb.png',
@@ -65,6 +82,9 @@ export default async function PartnersPage() {
       website: 'http://www.quadrantedimpresa.it/',
     },
   ]
+
+export default async function PartnersPage() {
+const pagina = await getPagina()
 
   return (
     <div className="partners-page easynet2003-page background-image">
