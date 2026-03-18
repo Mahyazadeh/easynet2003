@@ -7,8 +7,14 @@ import Hero from '@/components/hero/Hero'
 import NewsSection from '@/components/news/NewsSection'
 import config from '@/payload.config'
 import './styles.css'
+import { title } from 'process'
 
- export const COMPANY_NAME = 'EasyNet2003'
+export const COMPANY_NAME = 'Easy Net'
+
+export const metadata = {
+  title: `Sviluppo Software, Consulenza e Formazione | ${COMPANY_NAME} Srl`,
+  description: `Ci occupiamo di Sviluppo Software, System & Business Integration, Consulenza e Formazione Aziendale, Digital Innovation. Soluzioni e servizi professionali per le aziende`
+}
 
 export default async function HomePage() {
   const headers = await getHeaders()
