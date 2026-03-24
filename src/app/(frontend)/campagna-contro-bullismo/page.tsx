@@ -4,6 +4,7 @@ import GeneralSection from '@/components/pages-with-sections/GeneralSection'
 import { cache } from 'react'
 import { COMPANY_NAME } from '../page'
 
+export const revalidate = 60;
 
 const getPagina = cache(async () => {
   try {

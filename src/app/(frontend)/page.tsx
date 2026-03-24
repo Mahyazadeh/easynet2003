@@ -1,4 +1,3 @@
-import { headers as getHeaders } from 'next/headers.js'
 import { getPayload } from 'payload'
 
 import BestPracticeSection from '@/components/best_practice/BestPracticeSection'
@@ -10,6 +9,7 @@ import './styles.css'
 import { title } from 'process'
 
 export const COMPANY_NAME = 'Easy Net'
+export const revalidate = 60;
 
 export const metadata = {
   title: `Sviluppo Software, Consulenza e Formazione | ${COMPANY_NAME} Srl`,
@@ -17,7 +17,6 @@ export const metadata = {
 }
 
 export default async function HomePage() {
-  const headers = await getHeaders()
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
 

@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { cache } from 'react'
 import { COMPANY_NAME } from '../page'
 
+export const revalidate = 60;
 
 const getPagina = cache(async () => {
   try {

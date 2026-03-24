@@ -4,6 +4,8 @@ import config from '@/payload.config'
 import GeneralSection from '@/components/pages-with-sections/GeneralSection'
 import { notFound } from 'next/navigation'
 
+export const revalidate = 60;
+
 // Next.js passa automaticamente i parametri dell'URL a questa funzione
 interface PageProps {
   params: Promise<{ slug: string }>
