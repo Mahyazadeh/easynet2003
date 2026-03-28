@@ -6,7 +6,6 @@ import Hero from '@/components/hero/Hero'
 import NewsSection from '@/components/news/NewsSection'
 import config from '@/payload.config'
 import './styles.css'
-import { title } from 'process'
 
 export const COMPANY_NAME = 'Easy Net'
 export const revalidate = 60;
