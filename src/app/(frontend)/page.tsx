@@ -12,7 +12,10 @@ export const revalidate = 60;
 
 export const metadata = {
   title: `Sviluppo Software, Consulenza e Formazione | ${COMPANY_NAME} Srl`,
-  description: `Ci occupiamo di Sviluppo Software, System & Business Integration, Consulenza e Formazione Aziendale, Digital Innovation. Soluzioni e servizi professionali per le aziende`
+  description: `Ci occupiamo di Sviluppo Software, System & Business Integration, Consulenza e Formazione Aziendale, Digital Innovation. Soluzioni e servizi professionali per le aziende`,
+  verification: {
+    google: 'google58476716b3c16844'
+  }
 }
 
 export default async function HomePage() {
