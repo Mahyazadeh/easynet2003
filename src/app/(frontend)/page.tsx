@@ -14,7 +14,7 @@ export const metadata = {
   title: `Sviluppo Software, Consulenza e Formazione | ${COMPANY_NAME} Srl`,
   description: `Ci occupiamo di Sviluppo Software, System & Business Integration, Consulenza e Formazione Aziendale, Digital Innovation. Soluzioni e servizi professionali per le aziende`,
   verification: {
-    google: 'google58476716b3c16844'
+    google: 'U3jAvd9DiBqtjKDIIq3EIIz6KbaxvuLyc4aG9dPUDoQ'
   }
 }
 
